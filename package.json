@@ -1,0 +1,17 @@
+{
+  "name": "ts-server",
+  "version": "0.1.0",
+  "description": "Using TypeScript on server",
+  "main": "index.js",
+  "author": "ChugunovRoman <Zebs-BMK@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^8.0.47",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3"
+  }
+}
