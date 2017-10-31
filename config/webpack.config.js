@@ -71,6 +71,10 @@ const config = {
                 warnings: false,
                 compress: {
                     drop_console: true
+                },
+                output: {
+                    comments: false,
+                    beautify: false,
                 }
             }
         })
