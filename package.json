@@ -6,10 +6,10 @@
   "author": "ChugunovRoman <Zebs-BMK@yandex.ru>",
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc",
-    "tsc-watch": "tsc -w",
     "start": "node ./build/index.js",
-    "watch": "nodemon --watch build/src build/src/index.js"
+    "watch": "nodemon --watch build/src build/src/index.js",
+    "build": "webpack --config ./config/webpack.config.js",
+    "build:watch": "webpack --config ./config/webpack.config.js --watch"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -27,7 +27,12 @@
     "@types/hapi": "^16.1.10",
     "@types/mongoose": "^4.7.24",
     "@types/node": "^8.0.47",
+    "fork-ts-checker-webpack-plugin": "^0.2.8",
+    "ts-loader": "^3.1.1",
     "ts-node": "^3.3.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.5.3",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0",
+    "uglifyjs-webpack-plugin": "^1.0.1"
   }
 }
