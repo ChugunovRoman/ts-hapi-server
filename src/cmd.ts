@@ -2,10 +2,10 @@ process.stdin.setEncoding('utf8');
 
 // Read stdin for inputing cmd
 process.stdin.on('readable', () => {
-    let input = process.stdin.read();
+    let input: string | Buffer = process.stdin.read();
     
     if (input !== null) {
-        let cmd = input.toString().trim();
+        let cmd: string = input.toString().trim();
 
         if (cmd === 'exit') {
             console.log('Close server.');
