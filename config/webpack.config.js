@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals'); // for exclude node core modules in bundle file
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // Optimization plugin
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const path = require('path');
 
@@ -43,7 +44,7 @@ const config = {
                 test: regExps.ts,
                 use: [
                     {
-                        loader: 'ts-loader',
+                        loader: 'awesome-typescript-loader',
                         options: {
                             transpileOnly: true 
                         }
@@ -60,6 +61,8 @@ const config = {
     devtool: 'source-map',
 
     plugins: [
+        new CheckerPlugin(),
+        
         new ForkTsCheckerWebpackPlugin(),
     
         new UglifyJSPlugin({

@@ -30,6 +30,7 @@
     "@types/joi": "^10.4.4",
     "@types/mongoose": "^4.7.24",
     "@types/node": "^8.0.47",
+    "awesome-typescript-loader": "^3.3.0",
     "fork-ts-checker-webpack-plugin": "^0.2.8",
     "ts-loader": "^3.1.1",
     "ts-node": "^3.3.0",
