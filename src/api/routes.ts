@@ -1,8 +1,9 @@
-import * as Hapi from "hapi";
+import * as Hapi from 'hapi';
 
 import { Index, Hello } from './handlers';
+import { Route } from 'hapi';
 
-export default function Routes(server: Hapi.Server) {
+const Routes = (server: Hapi.Server) => {
 
     server.route({
         method: 'GET',
@@ -16,3 +17,5 @@ export default function Routes(server: Hapi.Server) {
         handler: Hello
     });
 };
+
+export default Routes;

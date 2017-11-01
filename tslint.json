@@ -1,0 +1,61 @@
+{
+    "rules": {
+        "quotemark": [true, "single"],
+        "semicolon": [true],
+        "no-empty-interface": true,
+        "no-import-side-effect": false,
+        "no-internal-module": true,
+        "no-magic-numbers": true,
+        "no-namespace": [true, "allow-declarations"],
+        "no-non-null-assertion": true,
+        "no-reference": true,
+        "no-var-requires": true,
+        "only-arrow-functions": true,
+        "typedef": [
+            "call-signature",
+            "arrow-call-signature",
+            "parameter",
+            "arrow-parameter",
+            "property-declaration",
+            "variable-declaration"
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            },
+            {
+                "call-signature": "onespace",
+                "index-signature": "onespace",
+                "parameter": "onespace",
+                "property-declaration": "onespace",
+                "variable-declaration": "onespace"
+            }
+        ],
+        "unified-signatures": true,
+        "ban": [
+            true,
+            "arguments.callee",
+            {"name": "eval", "message": "Don't use this. Please."},
+            {"name": "with", "message": "please don't!!!"},
+            {"name": "$", "message": "please don't!!!"}
+        ],
+        "curly": true,
+        "forin": true,
+        "import-blacklist": [true, "lodash"],
+        "label-position": true,
+        "no-arg": true,
+        "no-duplicate-super": true,
+        "no-duplicate-switch-case": true,
+        "no-duplicate-variable": true,
+        "no-empty": true,
+        "no-eval": true,
+        "no-unused-expression": true,
+        "no-implicit-dependencies": true,
+        "no-invalid-this": true
+    }
+}

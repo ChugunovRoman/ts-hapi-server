@@ -70,7 +70,7 @@ const config = {
                 ecma: 8,
                 warnings: false,
                 compress: {
-                    drop_console: true
+                    drop_console: false
                 },
                 output: {
                     comments: false,
