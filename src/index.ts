@@ -1,6 +1,7 @@
 import * as Hapi from 'hapi';
 import * as Api from './api';
 
+import Logger from './plugins/logger';
 // to import interactive commands
 import './cmd';
 
@@ -20,6 +21,9 @@ server.connection({ port: 3000, host: '127.0.0.1' });
 
 // init server api
 Api.init(server);
+
+// init Logger
+Logger(server);
 
 server.start((err: Error) => {
     if (err) {
