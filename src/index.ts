@@ -23,9 +23,6 @@ process.on('unhandledRejection', (reason: any) => {
 
 server.connection({ port: 3000, host: '127.0.0.1' });
 
-// init server api
-// Api.init(server);
-
 // init Logger
 Logger(server);
 

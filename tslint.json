@@ -5,12 +5,12 @@
         "no-empty-interface": true,
         "no-import-side-effect": false,
         "no-internal-module": true,
-        "no-magic-numbers": true,
+        "no-magic-numbers": false,
         "no-namespace": [true, "allow-declarations"],
         "no-non-null-assertion": true,
         "no-reference": true,
         "no-var-requires": true,
-        "only-arrow-functions": true,
+        "only-arrow-functions": false,
         "typedef": [
             "call-signature",
             "arrow-call-signature",
@@ -56,6 +56,6 @@
         "no-eval": true,
         "no-unused-expression": true,
         "no-implicit-dependencies": true,
-        "no-invalid-this": true
+        "no-invalid-this": false
     }
 }
