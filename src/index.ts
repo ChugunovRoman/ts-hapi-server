@@ -1,9 +1,13 @@
 import * as Hapi from 'hapi';
 import * as Api from './api';
 
-import Logger from './plugins/logger';
 // to import interactive commands
 import './cmd';
+import Logger from './plugins/logger';
+import * as db from './database';
+import * as Users from './database/Users';
+
+global.Promise = require('bluebird');
 
 const server: Hapi.Server = new Hapi.Server();
 
@@ -20,11 +24,17 @@ process.on('unhandledRejection', (reason: any) => {
 server.connection({ port: 3000, host: '127.0.0.1' });
 
 // init server api
-Api.init(server);
+// Api.init(server);
 
 // init Logger
 Logger(server);
 
+// init database
+let database = db.init();
+// Models
+Users.init(server, database);
+
+// start server
 server.start((err: Error) => {
     if (err) {
         throw err;

@@ -10,6 +10,8 @@ process.stdin.on('readable', () => {
         if (cmd === 'exit') {
             console.log('Close server.');
             process.exit(0);
+        } else if (cmd === 'getPid') {
+            console.log('PID: ', process.pid);
         }
     }
 });
