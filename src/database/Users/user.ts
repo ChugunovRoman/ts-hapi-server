@@ -11,7 +11,6 @@ export interface IUser extends Mongoose.Document {
     validatePassword(pass: string): boolean;
 }
 
-
 export const UserSchema = new Mongoose.Schema(
     {
         name: {

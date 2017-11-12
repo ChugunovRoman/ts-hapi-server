@@ -1,5 +1,4 @@
 import * as Hapi from 'hapi';
-import * as Api from './api';
 
 // to import interactive commands
 import './cmd';
@@ -22,6 +21,8 @@ process.on('unhandledRejection', (reason: any) => {
 });
 
 server.connection({ port: 3000, host: '127.0.0.1' });
+
+server.realm.modifiers.route.prefix = '/api';
 
 // init Logger
 Logger(server);

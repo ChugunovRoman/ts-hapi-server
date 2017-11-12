@@ -15,7 +15,10 @@ export const init = (): IDataBase => {
 
     promise
         .then(() => console.log('Successful connect to mopngodb'))
-        .catch(err => console.log(`Unable to connect to database: ${err}`));
+        .catch(err => {
+            console.log(`Unable to connect to database: ${err}`);
+            process.exit();
+        });
     
     return {
         UserModel
