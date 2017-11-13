@@ -1,15 +1,16 @@
 import * as Mongoose from 'mongoose';
 
 import { IUser, UserModel } from './Users/user';
+import { IMongoConfig } from '../config'; 
 
 export interface IDataBase {
     UserModel: Mongoose.Model<IUser>;
 }
 
-export const init = (): IDataBase => {
+export const init = (Config: IMongoConfig): IDataBase => {
 
     (<any>Mongoose).Promise = Promise;
-    let promise = Mongoose.connect('mongodb://localhost:27017/ts_server_db', {
+    let promise = Mongoose.connect(Config.connect, {
         useMongoClient: true
     });
 

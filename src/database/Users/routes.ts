@@ -2,10 +2,11 @@ import * as Hapi from 'hapi';
 import { IDataBase } from '../index';
 import UserController from './controller';
 import * as validator from './validator';
+import { IJwtConfig } from '../../config';
 
-export default function(server: Hapi.Server, database: IDataBase): void {
+export default function(server: Hapi.Server, database: IDataBase, config: IJwtConfig): void {
 
-    const controller: UserController = new UserController(database);
+    const controller: UserController = new UserController(database, config);
     server.bind(controller); 
 
     // Get all users

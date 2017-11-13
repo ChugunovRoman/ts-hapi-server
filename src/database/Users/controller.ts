@@ -1,22 +1,25 @@
 import * as Hapi from 'hapi';
 import * as Jwt from 'jsonwebtoken';
 import * as Boom from 'boom';
+
 import { IDataBase } from '../index';
 import { IUser } from './user';
-import { request } from 'http';
-import { object } from 'joi';
+import { IJwtConfig } from '../../config'; 
+
 
 export default class UserController {
 
     private database: IDataBase;
+    private config: IJwtConfig;
 
-    constructor(database: IDataBase) {
+    constructor(database: IDataBase, config: IJwtConfig) {
         this.database = database;
+        this.config = config;
     }
 
     private getToken(user: IUser): string {
-        const secret: string = 'ablablablaSuperSecret',
-            expiration: string = '1h',
+        const secret: string = this.config.secret,
+            expiration: string = this.config.expiration,
             payload: object = { id: user._id };
 
         return Jwt.sign(payload, secret, { expiresIn: expiration });

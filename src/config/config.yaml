@@ -1,0 +1,12 @@
+default:
+    server:
+        port: 3000
+        host: '127.0.0.1'
+        routePrefix: '/api'
+
+    mongo:
+        connect: 'mongodb://localhost:27017/ts_server_db'
+
+    jwt:
+        secret: 'ablablablaSuperSecret'
+        expiration: '1h'
